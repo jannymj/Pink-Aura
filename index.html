@@ -27,16 +27,16 @@
         <div class="navbar">
             <div class="menu">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Maquillaje</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
                     <li><a href="#">Ofertas</a></li>
                 </ul>
             </div>
             <div class="mobile-menu">
                 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
                 <ul class="mobile-menu-list">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Maquillaje</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
                     <li><a href="#">Ofertas</a></li>
                 </ul>
             </div>
@@ -44,8 +44,8 @@
     </header>
 
     <main>
-        <!-- Carrusel -->
-        <div class="carousel">
+         <!-- Carrusel -->
+         <div class="carousel">
             <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
             <div class="carousel-inner">
                 <div class="carousel-item">
@@ -135,6 +135,8 @@
                 </div>
             </section>
         </section>
+
+
     </main>
 
     <footer>
@@ -163,31 +165,5 @@
     </footer>
 
     <script src="/Documentos/scripts.js"></script>
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        
-        function showSlide(index) {
-            if (index >= slides.length) currentSlide = 0;
-            if (index < 0) currentSlide = slides.length - 1;
-            slides.forEach((slide, i) => {
-                slide.style.display = i === currentSlide ? 'block' : 'none';
-            });
-        }
-
-        function moveSlide(step) {
-            currentSlide += step;
-            showSlide(currentSlide);
-        }
-
-        function autoSlide() {
-            moveSlide(1);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentSlide);
-            setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
-        });
-    </script>
 </body>
 </html>

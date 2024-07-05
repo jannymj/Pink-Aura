@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-bar {
+    background-color: #efcfd6;
+    color: #000000;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.cruelty-free {
+    font-size: 14px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    margin-top: 30px;
+}
+
+.account-button,
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.account-button a img,
+.header-buttons a img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.account-button a img:hover,
+.header-buttons a img:hover {
+    transform: scale(1.1);
+}
+
+.account-button a img::after,
+.header-buttons a img::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.account-button a img:hover::after,
+.header-buttons a img:hover::after {
+    width: 100%;
+}
+
+.logo-container {
+    text-align: left;
+    margin-left: 80px; 
+    margin-top: -90px;
+    margin-bottom: -100px;
+}
+
+.logo {
+    max-height: 370px; 
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu ul li:last-child {
+    margin-right: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #efcfd6;
+}
+
+.menu ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu ul li a:hover::after,
+.menu ul li a:focus::after {
+    width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.mobile-menu-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-menu-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu-list li a:hover {
+    color: #ff69b4;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .account-button,
+    .header-buttons {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-buttons a img {
+        margin: 30px;
+    }
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px; /* Aumenta el espacio entre los productos */
+    padding: 40px 20px;
+}
+
+.product {
+    text-align: center;
+    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
+    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    position: relative;
+}
+
+.product img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción automáticamente */
+    border-radius: 8px;
+    transition: opacity 0.3s; /* Cambia la transición a opacity */
+}
+
+.product img.default-image {
+    display: block;
+    opacity: 1;
+}
+
+.product img.hover-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.product:hover .default-image {
+    opacity: 0;
+}
+
+.product:hover .hover-image {
+    display: block;
+    opacity: 1;
+}
+
+.product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.pink-bar {
+    background-color: #FAA7B9;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.pink-bar-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pink-bar-item {
+    flex: 1;
+    max-width: 200px;
+}
+
+.pink-bar-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skin-images {
+    position: relative; /* Asegura que el posicionamiento absoluto funcione correctamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre las imágenes */
+    margin-bottom: 30px; /* Espacio hacia abajo para separar de la siguiente sección */
+}
+
+.skin-images img {
+    width: 110%; /* Ajusta el ancho de la imagen al 110% del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block;
+    border-radius: 8px;
+}
+
+.skin-images .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* Contorno blanco */
+}
+
+
+@media (max-width: 768px) {
+    .products {
+        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+    }
+
+    .product {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+    }
+}
+
+/* Sección de Rostro */
+.rostro .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px; /* Aumenta el espacio entre los productos */
+    padding: 40px 20px;
+}
+
+.rostro .product {
+    text-align: center;
+    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
+    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    position: relative;
+}
+
+.rostro .product img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción automáticamente */
+    border-radius: 8px;
+    transition: opacity 0.3s; /* Cambia la transición a opacity */
+}
+
+.rostro .product img.default-image {
+    display: block;
+    opacity: 1;
+}
+
+.rostro .product img.hover-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.rostro .product:hover .default-image {
+    opacity: 0;
+}
+
+.rostro .product:hover .hover-image {
+    display: block;
+    opacity: 1;
+}
+
+.rostro .product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.rostro .product:hover .hover-image::before {
+    content: "Rostro";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Sección de Ojos */
+
+.ojos .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px; /* Aumenta el espacio entre los productos */
+    padding: 40px 20px;
+}
+
+.ojos .product {
+    text-align: center;
+    width: calc(23% - 7px); /* Ajusta el ancho de los productos */
+    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    position: relative;
+}
+
+.ojos .product img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción automáticamente */
+    border-radius: 8px;
+    transition: opacity 0.3s; /* Cambia la transición a opacity */
+}
+
+.ojos .product img.default-image {
+    display: block;
+    opacity: 1;
+}
+
+.ojos .product img.hover-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.ojos .product:hover .default-image {
+    opacity: 0;
+}
+
+.ojos .product:hover .hover-image {
+    display: block;
+    opacity: 1;
+}
+
+.ojos .product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ojos .product:hover .hover-image::before {
+    content: "Ojos";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Sección de Labios */
+.labios .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px; /* Aumenta el espacio entre los productos */
+    padding: 40px 20px;
+}
+
+.labios .product {
+    text-align: center;
+    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
+    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    position: relative;
+}
+
+.labios .product img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción automáticamente */
+    border-radius: 8px;
+    transition: opacity 0.3s; /* Cambia la transición a opacity */
+}
+
+.labios .product img.default-image {
+    display: block;
+    opacity: 1;
+}
+
+.labios .product img.hover-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.labios .product:hover .default-image {
+    opacity: 0;
+}
+
+.labios .product:hover .hover-image {
+    display: block;
+    opacity: 1;
+}
+
+.labios .product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.labios .product:hover .hover-image::before {
+    content: "Labios";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Sección de Accesorios */
+.accesorios .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px; /* Aumenta el espacio entre los productos */
+    padding: 40px 20px;
+}
+
+.accesorios .product {
+    text-align: center;
+    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
+    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    position: relative;
+}
+
+.accesorios .product img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción automáticamente */
+    border-radius: 8px;
+    transition: opacity 0.3s; /* Cambia la transición a opacity */
+}
+
+.accesorios .product img.default-image {
+    display: block;
+    opacity: 1;
+}
+
+.accesorios .product img.hover-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.accesorios .product:hover .default-image {
+    opacity: 0;
+}
+
+.accesorios .product:hover .hover-image {
+    display: block;
+    opacity: 1;
+}
+
+.accesorios .product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.accesorios .product:hover .hover-image::before {
+    content: "Accesorios";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
