@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PinkAura.com</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/Documentos/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="top-bar">
+        <div class="top-bar fixed-top">
             <div class="cruelty-free">Todos nuestros productos son Cruelty Free</div>
         </div>
         <div class="header-content">
@@ -28,8 +28,8 @@
             <div class="menu">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Ofertas</a></li>
                     <li><a href="#">Maquillaje</a></li>
+                    <li><a href="#">Ofertas</a></li>
                 </ul>
             </div>
             <div class="mobile-menu">
@@ -37,24 +37,157 @@
                 <ul class="mobile-menu-list">
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Maquillaje</a></li>
-                    <li><a href="#">Ojos</a></li>
-                    <li><a href="#">Labios</a></li>
                     <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Carrito</a></li>
-                    <li><a href="#">Buscar</a></li>
-                    <li><a href="#">Crear cuenta</a></li>
-                    <li><a href="#">Iniciar sesión</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Carrusel -->
+        <div class="carousel">
+            <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="Images/Ariiba de nuevos lanzamientos.webp" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="Images/Carrusel4.webp" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="Images/Carrusel3.webp" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Nuevos lanzamientos -->
+        <section class="new-releases">
+            <h2>Nuevos lanzamientos</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="Images/Ultimos lanzamientos (Labial individual).webp" alt="Producto 1" class="default-image">
+                    <img src="Images/Ultimos lanzamientos (Labial individual)2.webp" alt="Producto 1 Hover" class="hover-image">
+                    <p class="product-name">BEAUTY CREATIONS - PLUMP & POUT PLUMPING GLOSS STICK - LIP GLOSS</p>
+                    <p class="product-price">$ 149.00</p>
+                </div>
+                <div class="product">
+                    <img src="Images/Ultimos lanzamientos (Labiales ).webp" alt="Producto 2" class="default-image">
+                    <img src="Images/Ultimos lanzamientos (Labial individual) 1.webp" alt="Producto 2 Hover" class="hover-image">
+                    <p class="product-name">BEAUTY CREATIONS - PLUMP AND POUT JOIN PR - DELINEADORES Y GLOSS STICK
+                    </p>
+                    <p class="product-price">$1,599.00</p>
+                </div>
+                <div class="product">
+                    <img src="Images/Ultimos lanzamientos (Mascarilla de labios).jpg" alt="Producto 3" class="default-image">
+                    <img src="Images/Ultimos lanzamientos (Mascarilla de labios 2).jpg" alt="Producto 3 Hover" class="hover-image">
+                    <p class="product-name">LANEIGE LIP SLEEPING MASK WATERMELON POP (MASCARILLA DE NOCHE PARA LABIOS)
+                    </p>
+                    <p class="product-price">$570.00</p>
+                </div>
+                <div class="product">
+                    <img src="Images/Ultimos lanzamientos (serum).jpg" alt="Producto 4" class="default-image">
+                    <img src="Images/Ultimos lanzamientos (serum2).jpg" alt="Producto 4 Hover" class="hover-image">
+                    <p class="product-name">LANEIGE GLOWY MAKEUP SERUM (SERUM Y BASE DE MAQUILLAJE)
+                    </p>
+                    <p class="product-price">$760.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imagen adicional y sección de Skin -->
+        <section class="skin">
+            <div class="skin-images">
+                <img src="Images/Debajo de nuevos lanzamientos.webp" alt="Imagen 1" class="full-width-image">
+                <img src="Images/Debajo de nuevos lanzamientos (2).webp" alt="Imagen 2" class="full-width-image">
+            </div>
+            <section class="new-releases">
+                <h2>SKIN</h2>
+                <div class="products">
+                    <div class="product">
+                        <img src="Images/Skin1.webp" alt="Producto 1" class="default-image">
+                        <img src="Images/Skin 1.2.webp" alt="Producto 1 Hover" class="hover-image">
+                        <p class="product-name">CREMA ANTI-EDAD PARA CONTORNO DE OJOS FILLER FREE - SKIN CARE
+                        </p>
+                        <p class="product-price">$ 299.00</p>
+                    </div>
+                    <div class="product">
+                        <img src="Images/Skin 2.webp" alt="Producto 2" class="default-image">
+                        <img src="Images/Skin 2.1.webp" alt="Producto 2 Hover" class="hover-image">
+                        <p class="product-name">SUERO HIDRATANTE INSTA DRIP - SKIN CARE
+                        </p>
+                        <p class="product-price">$ 249.00</p>
+                    </div>
+                    <div class="product">
+                        <img src="Images/Skin 3.webp" alt="Producto 3" class="default-image">
+                        <img src="Images/Skin 3.1.webp" alt="Producto 3 Hover" class="hover-image">
+                        <p class="product-name">SKIN - CREMA HIDRATANTE ANTI-EDAD LEGALLY GLOW REJUVENATING - SKIN CARE
+                        </p>
+                        <p class="product-price">$299.00</p>
+                    </div>
+                    <div class="product">
+                        <img src="Images/Skin 4.webp" alt="Producto 4" class="default-image">
+                        <img src="Images/Skin4.1.webp" alt="Producto 4 Hover" class="hover-image">
+                        <p class="product-name"> TONER FACIAL TONE SETTER BRIGHTENING FACIAL - SKIN CARE
+                        </p>
+                        <p class="product-price">$ 269.00</p>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
 
     <footer>
+        <div class="pink-bar">
+            <div class="pink-bar-content">
+                <div class="pink-bar-item">
+                    <h3>Misión</h3>
+                    <p>"En Pink Aura, nos dedicamos a empoderar a cada individuo a través de la belleza y la autoexpresión. Buscamos ofrecer productos y experiencias que celebren la diversidad y promuevan la confianza interior y exterior de nuestros clientes."
+                    </p>
+                </div>
+                <div class="pink-bar-item">
+                    <h3>Visión</h3>
+                    <p>"Ser reconocidos como líderes en la industria de la belleza por nuestra pasión por los colores vibrantes y nuestra dedicación a la innovación en productos que realzan la belleza natural de cada persona."</p>
+                </div>
+                <div class="pink-bar-item">
+                    <h3>Eslogan</h3>
+                    <p>"Resalta tu verdadero brillo con Pink Aura."</p>
+                </div>
+                
+                <div class="pink-bar-item">
+                    <h3>Rastrea tu pedido</h3>
+                    <p>Sigue tu pedido en línea</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="/Documentos/scripts.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+            slides.forEach((slide, i) => {
+                slide.style.display = i === currentSlide ? 'block' : 'none';
+            });
+        }
+
+        function moveSlide(step) {
+            currentSlide += step;
+            showSlide(currentSlide);
+        }
+
+        function autoSlide() {
+            moveSlide(1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+            setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+        });
+    </script>
 </body>
 </html>
