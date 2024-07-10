@@ -25,7 +25,7 @@ function autoSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
-    setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+    setInterval(autoSlide, 4000); // Cambia de imagen cada 4 segundos
 });
 
 }

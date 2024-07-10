@@ -358,3 +358,21 @@ body {
         width: 100%; /* Ajusta el ancho de las imágenes para dispositivos móviles */
     }
 }
+.button-cart {
+    display: inline-block;
+    background-color: #FFD1DC; /* Color rosita suave */
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #FFD1DC; /* Borde del mismo color que el fondo */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button-cart:hover {
+    background-color: #FF69B4; /* Cambio de color al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+    border-color: #FF69B4; /* Borde rosado al pasar el mouse */
+}

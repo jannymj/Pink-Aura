@@ -307,7 +307,6 @@ body {
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* Contorno blanco */
 }
 
-
 @media (max-width: 768px) {
     .products {
         padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
@@ -318,7 +317,7 @@ body {
     }
 }
 
-/* Sección de Rostro */
+/* Estilos específicos para la sección de Rostro */
 .rostro .products {
     display: flex;
     justify-content: center;
@@ -376,27 +375,39 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
 }
 
-/* Sección de Ojos */
+@media (max-width: 768px) {
+    .rostro .products {
+        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+    }
 
+    .rostro .product {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+    }
+}
+
+/* Estilos específicos para la sección de Ojos */
 .ojos .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 70px; /* Aumenta el espacio entre los productos */
+    gap: 100px; /* Aumenta el espacio entre los productos */
     padding: 40px 20px;
 }
 
 .ojos .product {
     text-align: center;
-    width: calc(23% - 7px); /* Ajusta el ancho de los productos */
+    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
     margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
     position: relative;
 }
@@ -443,20 +454,33 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
 }
 
-/* Sección de Labios */
+@media (max-width: 768px) {
+    .ojos .products {
+        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+    }
+
+    .ojos .product {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+    }
+}
+
+/* Estilos específicos para la sección de Labios */
 .labios .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 70px; /* Aumenta el espacio entre los productos */
+    gap: 100px; /* Aumenta el espacio entre los productos */
     padding: 40px 20px;
 }
 
@@ -509,20 +533,32 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
 }
 
-/* Sección de Accesorios */
+@media (max-width: 768px) {
+    .labios .products {
+        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+    }
+
+    .labios .product {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+    }
+}
+/* Estilos específicos para la sección de Accesorios */
 .accesorios .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 70px; /* Aumenta el espacio entre los productos */
+    gap: 100px; /* Aumenta el espacio entre los productos */
     padding: 40px 20px;
 }
 
@@ -575,10 +611,41 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+}
+
+@media (max-width: 768px) {
+    .accesorios .products {
+        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+    }
+
+    .accesorios .product {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+    }
+}
+.add-to-cart-button {
+    display: inline-block;
+    background-color: #FFD1DC; /* Color rosita suave */
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #FFD1DC; /* Borde del mismo color que el fondo */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #FF69B4; /* Cambio de color al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+    border-color: #FF69B4; /* Borde rosado al pasar el mouse */
 }
