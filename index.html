@@ -21,7 +21,7 @@
             </div>
             <div class="header-buttons">
                 <a href="#"><img src="Images/Lupa.png.png" alt="Buscar"></a>
-                <a href="carrito.html"><img src="Images/Bolsita.png" alt="Carrito"></a>
+                <a href="carrito.html" onclick="toggleCart()"><img src="Images/Bolsita.png" alt="Carrito"></a>
 
             </div>
         </div>
@@ -62,88 +62,87 @@
             <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
         </div>
 
-        <!-- Nuevos lanzamientos -->
+       <!-- Nuevos lanzamientos -->
+       <section class="new-releases">
+        <h2>Nuevos lanzamientos</h2>
+        <div class="products">
+            <div class="product">
+                <img src="Images/Ultimos lanzamientos (Labial individual).webp" alt="Producto 1" class="default-image">
+                <img src="Images/Ultimos lanzamientos (Labial individual)2.webp" alt="Producto 1 Hover" class="hover-image">
+                <p class="product-name">BEAUTY CREATIONS - PLUMP & POUT PLUMPING GLOSS STICK - LIP GLOSS</p>
+                <p class="product-price">$ 149.00</p>
+                <!-- Modificado para llamar a addToCart con los parámetros correctos -->
+                <a href="carrito.html" class="button-cart" onclick="addToCart('producto1', 'BEAUTY CREATIONS - PLUMP & POUT PLUMPING GLOSS STICK - LIP GLOSS', 149.00, 'Images/Ultimos lanzamientos (Labial individual).webp')">Agregar a la bolsita</a>
+            </div>
+            <div class="product">
+                <img src="Images/Ultimos lanzamientos (Labiales ).webp" alt="Producto 2" class="default-image">
+                <img src="Images/Ultimos lanzamientos (Labial individual) 1.webp" alt="Producto 2 Hover" class="hover-image">
+                <p class="product-name">BEAUTY CREATIONS - PLUMP AND POUT JOIN PR - DELINEADORES Y GLOSS STICK</p>
+                <p class="product-price">$1,599.00</p>
+                <!-- Modificado para llamar a addToCart con los parámetros correctos -->
+                <a href="carrito.html" class="button-cart" onclick="addToCart('producto2', 'BEAUTY CREATIONS - PLUMP AND POUT JOIN PR - DELINEADORES Y GLOSS STICK', 1599.00, 'Images/Ultimos lanzamientos (Labiales ).webp')">Agregar a la bolsita</a>
+            </div>
+            <div class="product">
+                <img src="Images/Ultimos lanzamientos (Mascarilla de labios).jpg" alt="Producto 3" class="default-image">
+                <img src="Images/Ultimos lanzamientos (Mascarilla de labios 2).jpg" alt="Producto 3 Hover" class="hover-image">
+                <p class="product-name">LANEIGE LIP SLEEPING MASK WATERMELON POP (MASCARILLA DE NOCHE PARA LABIOS)</p>
+                <p class="product-price">$570.00</p>
+                <!-- Modificado para llamar a addToCart con los parámetros correctos -->
+                <a href="carrito.html" class="button-cart" onclick="addToCart('producto3', 'LANEIGE LIP SLEEPING MASK WATERMELON POP (MASCARILLA DE NOCHE PARA LABIOS)', 570.00, 'Images/Ultimos lanzamientos (Mascarilla de labios).jpg')">Agregar a la bolsita</a>
+            </div>
+            <div class="product">
+                <img src="Images/Ultimos lanzamientos (serum).jpg" alt="Producto 4" class="default-image">
+                <img src="Images/Ultimos lanzamientos (serum2).jpg" alt="Producto 4 Hover" class="hover-image">
+                <p class="product-name">LANEIGE GLOWY MAKEUP SERUM (SERUM Y BASE DE MAQUILLAJE)</p>
+                <p class="product-price">$760.00</p>
+                <!-- Modificado para llamar a addToCart con los parámetros correctos -->
+                <a href="carrito.html" class="button-cart" onclick="addToCart('producto4', 'LANEIGE GLOWY MAKEUP SERUM (SERUM Y BASE DE MAQUILLAJE)', 760.00, 'Images/Ultimos lanzamientos (serum).jpg')">Agregar a la bolsita</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Imagen adicional y sección de Skin -->
+    <section class="skin">
+        <div class="skin-images">
+            <img src="Images/Debajo de nuevos lanzamientos.webp" alt="Imagen 1" class="full-width-image">
+            <img src="Images/Debajo de nuevos lanzamientos (2).webp" alt="Imagen 2" class="full-width-image">
+        </div>
         <section class="new-releases">
-            <h2>Nuevos lanzamientos</h2>
+            <h2>SKIN</h2>
             <div class="products">
                 <div class="product">
-                    <img src="Images/Ultimos lanzamientos (Labial individual).webp" alt="Producto 1" class="default-image">
-                    <img src="Images/Ultimos lanzamientos (Labial individual)2.webp" alt="Producto 1 Hover" class="hover-image">
-                    <p class="product-name">BEAUTY CREATIONS - PLUMP & POUT PLUMPING GLOSS STICK - LIP GLOSS</p>
-                    <p class="product-price">$ 149.00</p>
-                    <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
+                    <img src="Images/Skin1.webp" alt="Producto 1" class="default-image">
+                    <img src="Images/Skin 1.2.webp" alt="Producto 1 Hover" class="hover-image">
+                    <p class="product-name">CREMA ANTI-EDAD PARA CONTORNO DE OJOS FILLER FREE - SKIN CARE</p>
+                    <p class="product-price">$ 299.00</p>
+                    <a href="carrito.html" class="button-cart" onclick="addToCart('producto5', 'CREMA ANTI-EDAD PARA CONTORNO DE OJOS FILLER FREE - SKIN CARE', 299.00, 'Images/Skin1.webp')">Agregar a la bolsita</a>
                 </div>
                 <div class="product">
-                    <img src="Images/Ultimos lanzamientos (Labiales ).webp" alt="Producto 2" class="default-image">
-                    <img src="Images/Ultimos lanzamientos (Labial individual) 1.webp" alt="Producto 2 Hover" class="hover-image">
-                    <p class="product-name">BEAUTY CREATIONS - PLUMP AND POUT JOIN PR - DELINEADORES Y GLOSS STICK
-                    </p>
-                    <p class="product-price">$1,599.00</p>
-                    <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
+                    <img src="Images/Skin 2.webp" alt="Producto 2" class="default-image">
+                    <img src="Images/Skin 2.1.webp" alt="Producto 2 Hover" class="hover-image">
+                    <p class="product-name">SUERO HIDRATANTE INSTA DRIP - SKIN CARE</p>
+                    <p class="product-price">$ 249.00</p>
+                    <a href="carrito.html" class="button-cart" onclick="addToCart('producto6', 'SUERO HIDRATANTE INSTA DRIP - SKIN CARE', 249.00, 'Images/Skin 2.webp')">Agregar a la bolsita</a>
                 </div>
                 <div class="product">
-                    <img src="Images/Ultimos lanzamientos (Mascarilla de labios).jpg" alt="Producto 3" class="default-image">
-                    <img src="Images/Ultimos lanzamientos (Mascarilla de labios 2).jpg" alt="Producto 3 Hover" class="hover-image">
-                    <p class="product-name">LANEIGE LIP SLEEPING MASK WATERMELON POP (MASCARILLA DE NOCHE PARA LABIOS)
-                    </p>
-                    <p class="product-price">$570.00</p>
-                    <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
+                    <img src="Images/Skin 3.webp" alt="Producto 3" class="default-image">
+                    <img src="Images/Skin 3.1.webp" alt="Producto 3 Hover" class="hover-image">
+                    <p class="product-name">MASCARILLA ANTI-PUNTOS NEGROS 3 EN 1 - SKIN CARE</p>
+                    <p class="product-price">$ 179.00</p>
+                    <a href="carrito.html" class="button-cart" onclick="addToCart('producto7', 'MASCARILLA ANTI-PUNTOS NEGROS 3 EN 1 - SKIN CARE', 179.00, 'Images/Skin 3.webp')">Agregar a la bolsita</a>
                 </div>
                 <div class="product">
-                    <img src="Images/Ultimos lanzamientos (serum).jpg" alt="Producto 4" class="default-image">
-                    <img src="Images/Ultimos lanzamientos (serum2).jpg" alt="Producto 4 Hover" class="hover-image">
-                    <p class="product-name">LANEIGE GLOWY MAKEUP SERUM (SERUM Y BASE DE MAQUILLAJE)
-                    </p>
-                    <p class="product-price">$760.00</p>
-                    <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
+                    <img src="Images/Skin 4.webp" alt="Producto 4" class="default-image">
+                    <img src="Images/Skin4.1.webp" alt="Producto 4 Hover" class="hover-image">
+                    <p class="product-name">NEEDLES NO MORE NO MORE BAGGAGE - SKIN CARE</p>
+                    <p class="product-price">$ 599.00</p>
+                    <a href="carrito.html" class="button-cart" onclick="addToCart('producto8', 'NEEDLES NO MORE NO MORE BAGGAGE - SKIN CARE', 599.00, 'Images/Skin 4.webp')">Agregar a la bolsita</a>
                 </div>
             </div>
         </section>
+    </section>
 
-        <!-- Imagen adicional y sección de Skin -->
-        <section class="skin">
-            <div class="skin-images">
-                <img src="Images/Debajo de nuevos lanzamientos.webp" alt="Imagen 1" class="full-width-image">
-                <img src="Images/Debajo de nuevos lanzamientos (2).webp" alt="Imagen 2" class="full-width-image">
-            </div>
-            <section class="new-releases">
-                <h2>SKIN</h2>
-                <div class="products">
-                    <div class="product">
-                        <img src="Images/Skin1.webp" alt="Producto 1" class="default-image">
-                        <img src="Images/Skin 1.2.webp" alt="Producto 1 Hover" class="hover-image">
-                        <p class="product-name">CREMA ANTI-EDAD PARA CONTORNO DE OJOS FILLER FREE - SKIN CARE
-                        </p>
-                        <p class="product-price">$ 299.00</p>
-                        <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
-                    </div>
-                    <div class="product">
-                        <img src="Images/Skin 2.webp" alt="Producto 2" class="default-image">
-                        <img src="Images/Skin 2.1.webp" alt="Producto 2 Hover" class="hover-image">
-                        <p class="product-name">SUERO HIDRATANTE INSTA DRIP - SKIN CARE
-                        </p>
-                        <p class="product-price">$ 249.00</p>
-                        <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
-                    </div>
-                    <div class="product">
-                        <img src="Images/Skin 3.webp" alt="Producto 3" class="default-image">
-                        <img src="Images/Skin 3.1.webp" alt="Producto 3 Hover" class="hover-image">
-                        <p class="product-name">SKIN - CREMA HIDRATANTE ANTI-EDAD LEGALLY GLOW REJUVENATING - SKIN CARE
-                        </p>
-                        <p class="product-price">$299.00</p>
-                        <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
-                    </div>
-                    <div class="product">
-                        <img src="Images/Skin 4.webp" alt="Producto 4" class="default-image">
-                        <img src="Images/Skin4.1.webp" alt="Producto 4 Hover" class="hover-image">
-                        <p class="product-name"> TONER FACIAL TONE SETTER BRIGHTENING FACIAL - SKIN CARE
-                        </p>
-                        <p class="product-price">$ 269.00</p>
-                        <a href="carrito.html" class="button-cart">Agregar a la bolsita</a>
-                    </div>
-                </div>
-            </section>
-        </section>
     </main>
 
     <footer>
@@ -168,7 +167,11 @@
                     <p>Sigue tu pedido en línea</p>
                 </div>
             </div>
+            <div class="copyright">
+                <p>&copy; 2024 PinkAura. Todos los derechos reservados.</p>
+            </div>
         </div>
+      
         
         
     </footer>
@@ -194,6 +197,9 @@
             slideIndex += n - 1;
             showSlides();
         }
+         src="Documentos/scripts.js"</script>
+
+
     </script>
 </body>
 </html>
