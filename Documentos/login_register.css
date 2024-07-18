@@ -6,19 +6,19 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: flex-start; /* Alinea los elementos hacia arriba */
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
-    background-color: #ffe9f1; /* Color de fondo suave */
+    align-items: center; 
+    justify-content: flex-start; 
+    min-height: 100vh; 
+    background-color: #ffe9f1;
 }
 
 .logo-container {
-    margin-top: -100px; /* Reduce el espacio superior */
-    margin-bottom: -140px; /* Reduce el espacio inferior */
+    margin-top: -100px; 
+    margin-bottom: -140px; 
 }
 
 .logo {
-    max-height: 500px; /* Tamaño máximo del logo */
+    max-height: 500px;
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 0; /* Elimina el espacio superior */
+    margin-top: 0;
 }
 
 .input-form {
@@ -40,7 +40,7 @@ body {
 
 .input-form h2 {
     margin-bottom: 10px;
-    color: #e91e63; /* Rosa más intenso para los títulos */
+    color: #e91e63;
     font-size: 1.5rem;
 }
 
@@ -48,7 +48,7 @@ body {
 .input-form input[type="password"],
 .input-form input[type="text"] {
     padding: 12px;
-    border: 1px solid #e91e63; /* Borde rosa para los campos de entrada */
+    border: 1px solid #e91e63;
     border-radius: 6px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -57,12 +57,12 @@ body {
 .input-form input[type="email"]:focus,
 .input-form input[type="password"]:focus,
 .input-form input[type="text"]:focus {
-    border-color: #ff80ab; /* Rosa más claro al enfocar los campos */
+    border-color: #ff80ab;
 }
 
 .input-form button {
     padding: 12px;
-    background-color: #e91e63; /* Rosa intenso para el botón */
+    background-color: #e91e63;
     color: white;
     border: none;
     cursor: pointer;
@@ -72,17 +72,17 @@ body {
 }
 
 .input-form button:hover {
-    background-color: #ff80ab; /* Rosa más claro al pasar el ratón */
+    background-color: #ff80ab;
 }
 
 .message {
-    color: #e91e63; /* Rosa para el color del mensaje */
+    color: #e91e63; 
     font-size: 0.875rem;
     margin-top: 10px;
 }
 
 .message.error {
-    color: red; /* Color de error estándar */
+    color: red;
 }
 
 p {
