@@ -20,7 +20,7 @@
                 <img src="Images/Pink Aura 1.png" alt="Pink" class="logo">
             </div>
             <div class="header-buttons">
-                <a href="#"><img src="Images/Lupa.png.png" alt="Buscar"></a>
+                <a href="#" onclick="toggleSearch()"><img src="Images/Lupa.png.png" alt="Buscar"></a>
                 <a href="carrito.html" onclick="toggleCart()"><img src="Images/Bolsita.png" alt="Carrito"></a>
 
             </div>
@@ -45,6 +45,8 @@
     </header>
 
     <main>
+
+        
          <!-- Carrusel -->
          <div class="carousel">
             <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -179,8 +181,7 @@
 
     <script>
         let slideIndex = 0;
-        showSlides();
-
+        
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("carousel-item");
@@ -197,9 +198,10 @@
             slideIndex += n - 1;
             showSlides();
         }
-         src="Documentos/scripts.js"</script>
-
-
     </script>
+ <script src="Documentos/scripts.js"></script>
+ <script src="Documentos/scripts_carrito.js"></script>
+</script>
+
 </body>
-</html>
+</html>   

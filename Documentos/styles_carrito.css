@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece el alto mínimo del cuerpo al 100% del viewport */
+}
+
+.top-bar {
+    background-color: #efcfd6;
+    color: #000000;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.cruelty-free {
+    font-size: 14px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    margin-top: 30px; /* Para evitar que el contenido quede detrás del header fijo */
+}
+
+.account-button,
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.account-button a img,
+.header-buttons a img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.account-button a img:hover,
+.header-buttons a img:hover {
+    transform: scale(1.1);
+}
+
+.account-button a img::after,
+.header-buttons a img::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.account-button a img:hover::after,
+.header-buttons a img:hover::after {
+    width: 100%;
+}
+
+.logo-container {
+    text-align: left;
+    margin-left: 80px; 
+    margin-top: -90px;
+    margin-bottom: -100px;
+}
+
+.logo {
+    max-height: 370px; 
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu ul li:last-child {
+    margin-right: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #efcfd6;
+}
+
+.menu ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu ul li a:hover::after,
+.menu ul li a:focus::after {
+    width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.mobile-menu-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-menu-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu-list li a:hover {
+    color: #ff69b4;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .account-button,
+    .header-buttons {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-buttons a img {
+        margin: 30px;
+    }
+}
+
+.show {
+    display: block;
+}
+
+/* Agrega este código a tu archivo styles.css */
+/* Carrito de compras */
+.cart {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart th, .cart td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart img {
+    max-width: 60px;
+    height: auto;
+}
+
+.cart th {
+    background-color: #efcfd6; /* Color de fondo para encabezados */
+}
+
+.cart td {
+    font-size: 14px;
+}
+
+.cart td.quantity input[type="number"] {
+    width: 50px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-summary h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333; /* Color de texto para el subtotal */
+}
+
+.cart-summary button {
+    padding: 12px 24px;
+    background-color: #000000; /* Color rosa */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-summary button:hover {
+    background-color: #f734a6; /* Color rosa más oscuro al pasar el mouse */
+}
+
+/* Mensaje de éxito */
+.success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-message p {
+    font-size: 2em;
+    color: #333; /* Color de texto */
+    text-align: center;
+    animation: fadeInOut 5s ease;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Pink Bar */
+.pink-bar {
+    background-color: #FAA7B9;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.pink-bar-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pink-bar-item {
+    flex: 1;
+    max-width: 200px;
+}
+
+.pink-bar-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
