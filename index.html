@@ -14,13 +14,13 @@
         </div>
         <div class="header-content">
             <div class="account-button">
-                <a href="registro.html"><img src="Images/Usuario.png.png" alt="Cuenta"></a>
+                <a href="login_register.html"><img src="Images/Usuario.png.png" alt="Cuenta"></a>
             </div>
             <div class="logo-container">
                 <img src="Images/Pink Aura 1.png" alt="Pink" class="logo">
             </div>
             <div class="header-buttons">
-                <a href="#" onclick="toggleSearch()"><img src="Images/Lupa.png.png" alt="Buscar"></a>
+                <a href="#"><img src="Images/Lupa.png.png" alt="Buscar"></a>
                 <a href="carrito.html" onclick="toggleCart()"><img src="Images/Bolsita.png" alt="Carrito"></a>
 
             </div>
@@ -45,8 +45,6 @@
     </header>
 
     <main>
-
-        
          <!-- Carrusel -->
          <div class="carousel">
             <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -181,7 +179,8 @@
 
     <script>
         let slideIndex = 0;
-        
+        showSlides();
+
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("carousel-item");
@@ -202,6 +201,5 @@
  <script src="Documentos/scripts.js"></script>
  <script src="Documentos/scripts_carrito.js"></script>
 </script>
-
 </body>
-</html>   
+</html>
