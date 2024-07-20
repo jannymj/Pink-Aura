@@ -330,3 +330,14 @@ body {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
+.success-message {
+    color: rgb(255, 0, 187);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+
+

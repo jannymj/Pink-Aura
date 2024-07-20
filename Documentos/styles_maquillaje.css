@@ -205,22 +205,22 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 70px; /* Aumenta el espacio entre los productos */
+    gap: 70px; 
     padding: 40px 20px;
 }
 
 .product {
     text-align: center;
-    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
-    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    width: calc(25% - 7px); 
+    margin-bottom: 40px;
     position: relative;
 }
 
 .product img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción automáticamente */
+    max-width: 100%; 
+    height: auto; 
     border-radius: 8px;
-    transition: opacity 0.3s; /* Cambia la transición a opacity */
+    transition: opacity 0.3s; 
 }
 
 .product img.default-image {
@@ -277,17 +277,17 @@ body {
 }
 
 .skin-images {
-    position: relative; /* Asegura que el posicionamiento absoluto funcione correctamente */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px; /* Espacio entre las imágenes */
-    margin-bottom: 30px; /* Espacio hacia abajo para separar de la siguiente sección */
+    gap: 50px; 
+    margin-bottom: 30px; 
 }
 
 .skin-images img {
-    width: 110%; /* Ajusta el ancho de la imagen al 110% del contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 110%; 
+    height: auto; 
     display: block;
     border-radius: 8px;
 }
@@ -303,41 +303,40 @@ body {
     font-size: 2em;
     color: #333;
     text-align: center;
-    z-index: 1; /* Asegura que el texto esté sobre la imagen */
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* Contorno blanco */
+    z-index: 1; 
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; 
 }
 
 @media (max-width: 768px) {
     .products {
-        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+        padding: 20px; 
     }
 
     .product {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%; 
     }
 }
 
-/* Estilos específicos para la sección de Rostro */
 .rostro .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px; /* Aumenta el espacio entre los productos */
+    gap: 100px; 
     padding: 40px 20px;
 }
 
 .rostro .product {
     text-align: center;
-    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
-    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    width: calc(25% - 7px); 
+    margin-bottom: 40px; 
     position: relative;
 }
 
 .rostro .product img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción automáticamente */
+    max-width: 100%; 
+    height: auto; 
     border-radius: 8px;
-    transition: opacity 0.3s; /* Cambia la transición a opacity */
+    transition: opacity 0.3s; 
 }
 
 .rostro .product img.default-image {
@@ -388,35 +387,34 @@ body {
 
 @media (max-width: 768px) {
     .rostro .products {
-        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+        padding: 20px; 
     }
 
     .rostro .product {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%;
     }
 }
 
-/* Estilos específicos para la sección de Ojos */
 .ojos .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px; /* Aumenta el espacio entre los productos */
+    gap: 100px; 
     padding: 40px 20px;
 }
 
 .ojos .product {
     text-align: center;
-    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
-    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    width: calc(25% - 7px);
+    margin-bottom: 40px; 
     position: relative;
 }
 
 .ojos .product img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción automáticamente */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
-    transition: opacity 0.3s; /* Cambia la transición a opacity */
+    transition: opacity 0.3s; 
 }
 
 .ojos .product img.default-image {
@@ -467,35 +465,34 @@ body {
 
 @media (max-width: 768px) {
     .ojos .products {
-        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+        padding: 20px; 
     }
 
     .ojos .product {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%; 
     }
 }
 
-/* Estilos específicos para la sección de Labios */
 .labios .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px; /* Aumenta el espacio entre los productos */
+    gap: 100px; 
     padding: 40px 20px;
 }
 
 .labios .product {
     text-align: center;
-    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
-    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    width: calc(25% - 7px); 
+    margin-bottom: 40px; 
     position: relative;
 }
 
 .labios .product img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción automáticamente */
+    max-width: 100%; 
+    height: auto; 
     border-radius: 8px;
-    transition: opacity 0.3s; /* Cambia la transición a opacity */
+    transition: opacity 0.3s; 
 }
 
 .labios .product img.default-image {
@@ -546,34 +543,33 @@ body {
 
 @media (max-width: 768px) {
     .labios .products {
-        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+        padding: 20px; 
     }
 
     .labios .product {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%; 
     }
 }
-/* Estilos específicos para la sección de Accesorios */
 .accesorios .products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px; /* Aumenta el espacio entre los productos */
+    gap: 100px; 
     padding: 40px 20px;
 }
 
 .accesorios .product {
     text-align: center;
-    width: calc(25% - 7px); /* Ajusta el ancho de los productos */
-    margin-bottom: 40px; /* Espacio hacia abajo entre los productos */
+    width: calc(25% - 7px); 
+    margin-bottom: 40px; 
     position: relative;
 }
 
 .accesorios .product img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción automáticamente */
+    max-width: 100%;
+    height: auto; 
     border-radius: 8px;
-    transition: opacity 0.3s; /* Cambia la transición a opacity */
+    transition: opacity 0.3s; 
 }
 
 .accesorios .product img.default-image {
@@ -624,28 +620,28 @@ body {
 
 @media (max-width: 768px) {
     .accesorios .products {
-        padding: 20px; /* Ajusta el espacio interior para dispositivos móviles */
+        padding: 20px; 
     }
 
     .accesorios .product {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%; 
     }
 }
 .add-to-cart-button {
     display: inline-block;
-    background-color: #FFD1DC; /* Color rosita suave */
+    background-color: #FFD1DC; 
     color: #333;
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px 20px;
-    border: 2px solid #FFD1DC; /* Borde del mismo color que el fondo */
+    border: 2px solid #FFD1DC; 
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .add-to-cart-button:hover {
-    background-color: #FF69B4; /* Cambio de color al pasar el mouse */
-    color: #fff; /* Texto blanco al pasar el mouse */
-    border-color: #FF69B4; /* Borde rosado al pasar el mouse */
+    background-color: #FF69B4;
+    color: #fff; 
+    border-color: #FF69B4; 
 }

@@ -6,6 +6,34 @@
     <title>Carrito de Compras - PinkAura.com</title>
     <link rel="stylesheet" href="/Documentos/styles_carrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            background: rgba(255, 255, 255, 0.8);
+            color: #FF69B4;
+            text-align: center;
+            padding: 5% 0;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            z-index: 1000;
+            border: 2px solid #FF69B4;
+        }
+        .success-message p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        .success-message .thanks {
+            font-size: 30px;
+            color: #FF69B4;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -57,12 +85,12 @@
                     </tr>
                 </thead>
                 <tbody id="cartItems">
-                    
                 </tbody>
             </table>
             <div class="cart-summary">
                 <h3>Total: <span id="cartTotal">$0.00</span></h3>
                 <button onclick="finalizePurchase()">Finalizar Compra</button>
+                <button onclick="generatePDF()">Imprimir recibo</button>
             </div>
         </section>
     </main>
@@ -72,8 +100,7 @@
             <div class="pink-bar-content">
                 <div class="pink-bar-item">
                     <h3>Misión</h3>
-                    <p>"En Pink Aura, nos dedicamos a empoderar a cada individuo a través de la belleza y la autoexpresión. Buscamos ofrecer productos y experiencias que celebren la diversidad y promuevan la confianza interior y exterior de nuestros clientes."
-                    </p>
+                    <p>"En Pink Aura, nos dedicamos a empoderar a cada individuo a través de la belleza y la autoexpresión. Buscamos ofrecer productos y experiencias que celebren la diversidad y promuevan la confianza interior y exterior de nuestros clientes."</p>
                 </div>
                 <div class="pink-bar-item">
                     <h3>Visión</h3>
@@ -83,7 +110,6 @@
                     <h3>Eslogan</h3>
                     <p>"Resalta tu verdadero brillo con Pink Aura."</p>
                 </div>
-                
                 <div class="pink-bar-item">
                     <h3>Rastrea tu pedido</h3>
                     <p>Sigue tu pedido en línea</p>
@@ -93,11 +119,115 @@
                 <p>&copy; 2024 PinkAura. Todos los derechos reservados.</p>
             </div>
         </div>
-      
-        
-        
     </footer>
 
+    <div class="success-message" id="successMessage">
+        <p class="thanks">Gracias por tu compra.</p>
+        <p>Resalta tu belleza con PinkAura.</p>
+    </div>
+
     <script src="Documentos/scripts_carrito.js"></script>
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const pinkColor = '#FF69B4';
+            const grayColor = '#333333';
+
+            // Generar número de recibo único
+            const receiptNumber = Math.floor(Math.random() * 1000000);
+            // Obtener fecha actual
+            const now = new Date();
+            const date = now.toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+
+            doc.setFont('Poppins');
+            doc.setTextColor(grayColor);
+
+            doc.setFontSize(18);
+            doc.setTextColor(pinkColor);
+            doc.text('Recibo de Compra - PinkAura.com', 20, 20);
+
+            doc.setFontSize(12);
+            doc.setTextColor(grayColor);
+            doc.text(`Número de Recibo: ${receiptNumber}`, 20, 30);
+            doc.text(`Fecha: ${date}`, 20, 40);
+            doc.text('Contacto: pinkaura@gmail.com', 20, 50);
+            doc.text('Teléfono: +52 664-827-4915', 20, 60);
+
+            let items = document.querySelectorAll('#cartItems tr');
+            let y = 70;
+
+            let data = [];
+            items.forEach(item => {
+                let producto = item.querySelector('td:nth-child(1)').textContent;
+                let nombre = item.querySelector('td:nth-child(2)').textContent;
+                let precio = item.querySelector('td:nth-child(3)').textContent;
+                let cantidad = parseInt(item.querySelector('td:nth-child(4)').textContent);
+                let total = item.querySelector('td:nth-child(5)').textContent;
+
+                data.push([producto, nombre, precio, total]);
+            });
+
+            doc.autoTable({
+                head: [['Producto', 'Nombre', 'Precio', 'Total']],
+                body: data,
+                theme: 'grid',
+                styles: {
+                    fillColor: [255, 255, 255],
+                    textColor: [0, 0, 0],
+                    halign: 'center'
+                },
+                headStyles: {
+                    fillColor: [255, 182, 193]
+                },
+                margin: { top: 80 }
+            });
+
+            y = doc.autoTable.previous.finalY + 10;
+
+            doc.setFontSize(14);
+            doc.setTextColor(pinkColor);
+            let totalFinal = document.getElementById('cartTotal').textContent;
+            doc.text(`Total Final: ${totalFinal}`, 20, y);
+
+            y += 20;
+            doc.setTextColor(pinkColor);
+            doc.setFontSize(16);
+            doc.text('¡Gracias por tu compra!', 105, y, { align: 'center' });
+
+            y += 10;
+            doc.text('Resalta tu verdadero brillo con Pink Aura.', 105, y, { align: 'center' });
+
+            doc.save('recibo_compra.pdf');
+        }
+
+        function finalizePurchase() {
+    // Mostrar el mensaje de éxito
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+
+    setTimeout(() => {
+        // Limpiar carrito en la interfaz
+        const cartItems = document.getElementById('cartItems');
+        while (cartItems.firstChild) {
+            cartItems.removeChild(cartItems.firstChild);
+        }
+
+        // Actualizar total
+        document.getElementById('cartTotal').textContent = '$0.00';
+
+        // Limpiar carrito en el almacenamiento local
+        localStorage.removeItem('cart');
+
+        // Redirigir a la página de inicio
+        window.location.href = 'index.html';
+    }, 4000); // 4 segundos para mostrar el mensaje antes de redirigir
+}
+
+    </script>
 </body>
 </html>
