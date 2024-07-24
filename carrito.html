@@ -128,107 +128,108 @@
 
     <script src="Documentos/scripts_carrito.js"></script>
     <script>
-        function generatePDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const pinkColor = '#FF69B4';
-            const grayColor = '#333333';
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const pinkColor = '#FF69B4';
+        const grayColor = '#333333';
 
-            // Generar número de recibo único
-            const receiptNumber = Math.floor(Math.random() * 1000000);
-            // Obtener fecha actual
-            const now = new Date();
-            const date = now.toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            });
+        const receiptNumber = Math.floor(Math.random() * 1000000);
+        const now = new Date();
+        const date = now.toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
 
-            doc.setFont('Poppins');
+        doc.setFont('Poppins');
+        doc.setTextColor(grayColor);
+
+        doc.setFontSize(18);
+        doc.setTextColor(pinkColor);
+        doc.text('Recibo de Compra - PinkAura.com', 20, 20);
+
+        doc.setFontSize(12);
+        doc.setTextColor(grayColor);
+        doc.text(`Número de Recibo: ${receiptNumber}`, 20, 30);
+        doc.text(`Fecha: ${date}`, 20, 40);
+        doc.text('Contacto: pinkaura@gmail.com', 20, 50);
+        doc.text('Teléfono: +52 664-827-4915', 20, 60);
+
+        let items = document.querySelectorAll('#cartItems tr');
+        let y = 70;
+        let totalCompra = 0; 
+        let pageHeight = doc.internal.pageSize.height;
+        let marginBottom = 30; 
+        let lineHeight = 60; 
+
+        items.forEach((item, index) => {
+            if (y + lineHeight > pageHeight - marginBottom) {
+                doc.addPage(); 
+                y = 20; 
+            }
+
+            let imagen = item.querySelector('td:nth-child(1) img').src;
+            let nombre = item.querySelector('td:nth-child(2)').textContent.trim();
+            let precio = item.querySelector('td:nth-child(3)').textContent.trim();
+            let cantidad = item.querySelector('td:nth-child(4)').textContent.trim().replace(/[^0-9]/g, ''); // Eliminar símbolos no numéricos
+            let total = item.querySelector('td:nth-child(5)').textContent.trim();
+
+            totalCompra += parseFloat(total.replace(/[^0-9,.]/g, '')); 
+            const img = new Image();
+            img.src = imagen;
+            doc.addImage(img, 'JPEG', 20, y, 20, 20);
+
             doc.setTextColor(grayColor);
-
-            doc.setFontSize(18);
-            doc.setTextColor(pinkColor);
-            doc.text('Recibo de Compra - PinkAura.com', 20, 20);
-
             doc.setFontSize(12);
-            doc.setTextColor(grayColor);
-            doc.text(`Número de Recibo: ${receiptNumber}`, 20, 30);
-            doc.text(`Fecha: ${date}`, 20, 40);
-            doc.text('Contacto: pinkaura@gmail.com', 20, 50);
-            doc.text('Teléfono: +52 664-827-4915', 20, 60);
 
-            let items = document.querySelectorAll('#cartItems tr');
-            let y = 70;
+            doc.text(`Nombre: ${nombre}`, 45, y + 5, { maxWidth: 150 });
 
-            let data = [];
-            items.forEach(item => {
-                let producto = item.querySelector('td:nth-child(1)').textContent;
-                let nombre = item.querySelector('td:nth-child(2)').textContent;
-                let precio = item.querySelector('td:nth-child(3)').textContent;
-                let cantidad = parseInt(item.querySelector('td:nth-child(4)').textContent);
-                let total = item.querySelector('td:nth-child(5)').textContent;
+            doc.text(`Precio: ${precio}`, 45, y + 20);
+            doc.text(`Cantidad: ${cantidad}`, 45, y + 35);
+            doc.text(`Total: ${total}`, 45, y + 50); 
 
-                data.push([producto, nombre, precio, total]);
-            });
+            y += lineHeight; 
+        });
 
-            doc.autoTable({
-                head: [['Producto', 'Nombre', 'Precio', 'Total']],
-                body: data,
-                theme: 'grid',
-                styles: {
-                    fillColor: [255, 255, 255],
-                    textColor: [0, 0, 0],
-                    halign: 'center'
-                },
-                headStyles: {
-                    fillColor: [255, 182, 193]
-                },
-                margin: { top: 80 }
-            });
-
-            y = doc.autoTable.previous.finalY + 10;
-
-            doc.setFontSize(14);
-            doc.setTextColor(pinkColor);
-            let totalFinal = document.getElementById('cartTotal').textContent;
-            doc.text(`Total Final: ${totalFinal}`, 20, y);
-
-            y += 20;
-            doc.setTextColor(pinkColor);
-            doc.setFontSize(16);
-            doc.text('¡Gracias por tu compra!', 105, y, { align: 'center' });
-
-            y += 10;
-            doc.text('Resalta tu verdadero brillo con Pink Aura.', 105, y, { align: 'center' });
-
-            doc.save('recibo_compra.pdf');
+        if (y + 20 > pageHeight - marginBottom) {
+            doc.addPage(); 
+            y = 20;
         }
+        doc.setFontSize(14);
+        doc.setTextColor(pinkColor);
+        doc.text(`Total de la Compra: $${totalCompra.toFixed(2)}`, 20, y);
 
-        function finalizePurchase() {
-    // Mostrar el mensaje de éxito
-    const successMessage = document.getElementById('successMessage');
-    successMessage.style.display = 'block';
+        y += 20;
+        doc.setTextColor(pinkColor);
+        doc.setFontSize(16);
+        doc.text('¡Gracias por tu compra en Pink Aura!', 105, y, { align: 'center' });
 
-    setTimeout(() => {
-        // Limpiar carrito en la interfaz
-        const cartItems = document.getElementById('cartItems');
-        while (cartItems.firstChild) {
-            cartItems.removeChild(cartItems.firstChild);
-        }
+        doc.save('recibo_compra.pdf');
+    }
 
-        // Actualizar total
-        document.getElementById('cartTotal').textContent = '$0.00';
+    function finalizePurchase() {
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
 
-        // Limpiar carrito en el almacenamiento local
-        localStorage.removeItem('cart');
+        setTimeout(() => {
+            const cartItems = document.getElementById('cartItems');
+            while (cartItems.firstChild) {
+                cartItems.removeChild(cartItems.firstChild);
+            }
 
-        // Redirigir a la página de inicio
-        window.location.href = 'index.html';
-    }, 4000); // 4 segundos para mostrar el mensaje antes de redirigir
-}
+            document.getElementById('cartTotal').textContent = '$0.00';
 
-    </script>
+            localStorage.removeItem('cart');
+
+            window.location.href = 'index.html';
+        }, 4000); 
+    }
+</script>
+
+    
+    
+    
     <script src="Documentos/scripts_carrito.js"></script>
 
 </body>
